@@ -1,9 +1,13 @@
 <aside class="sidebar-container">
     <nav class="sidebar-menu">
-        <!-- Menu Global (Tampil untuk semua role) -->
-        <a href="{{ route('dashboard') }}" class="menu-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
-            <i class="icon-dashboard"></i> Dashboard
-        </a>
+    <a href="/dashboard" class="menu-item {{ request()->routeIs('dashboard') ? 'active' : '' }}"><i class="fas fa-home"></i> Dashboard</a>
+    <a href="{{ route('pengguna.index') }}" class="menu-item {{ request()->routeIs('pengguna.index') ? 'active' : '' }}"><i class="fas fa-users"></i> Kelola Pengguna</a>
+    <a href="#" class="menu-item"><i class="fas fa-tools"></i> Kelola Teknis</a>
+    <a href="#" class="menu-item"><i class="fas fa-poll"></i> Kelola Survei</a>
+    <a href="#" class="menu-item"><i class="fas fa-file-alt"></i> Laporan</a>
+    <a href="#" class="menu-item"><i class="fas fa-print"></i> Cetak</a>
+    <a href="#" class="menu-item"><i class="fas fa-info-circle"></i> Info BPS</a>
+</nav>
 
         <!-- Menu Khusus Admin -->
         @if(auth()->user()->role === 'admin')

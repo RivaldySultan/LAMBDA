@@ -2,12 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Tampilkan halaman login saat akses localhost:8000/
+// Karena login.blade.php ada di luar, kita panggil 'login' saja
 Route::get('/', function () {
-    return view('auth.login');
+    return view('login'); 
 });
 
-// Tampilkan halaman dashboard setelah berhasil masuk
+// Route menuju dashboard
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+
+// Halaman Kelola Pengguna
+Route::get('/kelola-pengguna', function () {
+    return view('pengguna.index');
+})->name('pengguna.index');
